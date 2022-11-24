@@ -1,4 +1,5 @@
 use rand::Rng;
+use std::{thread, time};
 
 fn main() {
     loop {
@@ -35,6 +36,8 @@ fn main() {
         } else {
             2
         };
+
+        anim();
 
         if mode == random_number {
             println!("Tasapeli!");
@@ -90,4 +93,36 @@ fn ask_for_input() -> char {
             continue;
         }
     }
+}
+
+fn anim() {
+    clearscreen::clear().expect("virhe");
+    println!("K");
+    thread::sleep(time::Duration::from_millis(200));
+
+    clearscreen::clear().expect("virhe");
+    println!("K .");
+    thread::sleep(time::Duration::from_millis(200));
+
+    clearscreen::clear().expect("virhe");
+    println!("K . .");
+    thread::sleep(time::Duration::from_millis(200));
+
+    clearscreen::clear().expect("virhe");
+    println!("K . . P");
+    thread::sleep(time::Duration::from_millis(200));
+
+    clearscreen::clear().expect("virhe");
+    println!("K . . P .");
+    thread::sleep(time::Duration::from_millis(200));
+
+    clearscreen::clear().expect("virhe");
+    println!("K . . P . .");
+    thread::sleep(time::Duration::from_millis(200));
+
+    clearscreen::clear().expect("virhe");
+    println!("K . . P . . S");
+    thread::sleep(time::Duration::from_millis(200));
+
+    clearscreen::clear().expect("virhe");
 }
