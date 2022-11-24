@@ -7,7 +7,7 @@ fn main() {
 
         clearscreen::clear().expect("virhe");
 
-        println!("Valitse: [k] Kivi [p] Paperi [s] Sakset");
+        println!("Valitse: [k] Kivi [p] Paperi [s] Sakset [0] Poistu");
 
         // get user inputt
         let mut mode_input: String = String::new();
@@ -18,6 +18,11 @@ fn main() {
         let char_vec: Vec<char> = mode_input.chars().collect();
 
         let mode: char = char_vec[0];
+
+        if mode == '0' {
+            clearscreen::clear().expect("virhe");
+            return;
+        }
 
         if mode != 'k' && mode != 's' && mode != 'p' {
             continue;
