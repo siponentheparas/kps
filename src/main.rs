@@ -62,7 +62,7 @@ fn main() {
             options[mode], options[random_number]
         );
 
-        std::thread::sleep(std::time::Duration::from_millis(1000));
+        thread::sleep(time::Duration::from_millis(1000));
 
         let mode: char = ask_for_input();
         if mode == 'y' {
